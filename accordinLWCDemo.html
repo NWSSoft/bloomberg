@@ -1,0 +1,72 @@
+<template>
+    <lightning-card title = "Account , Contact And  opportunities Records" icon-name = "custom:custom10">
+        <div class = "slds-m-around_medium">
+    <lightning-accordion class="example-accordion"
+    onsectiontoggle={handleToggleSection}
+    allow-multiple-sections-open >
+
+
+    <lightning-accordion-section name="A" label="Account">
+        <template if:true={accounts}>
+            <!-- accordion component with muliple sectio open -->
+        <lightning-accordion allow-multiple-sections-open>
+            <template for:each={accounts} for:item="acc" for:index="indexVara">
+                <lightning-accordion-section key={acc.Id} name={acc.Name} label={acc.Name}>
+                    <p><b>Id</b> : {acc.Id}</p>
+                    <p><b>AccountNumber</b> : {acc.AccountNumber}</p>
+                    <p><b>Phone</b> : {acc.Phone}</p>
+                    <p><b>Industry</b> : {acc.Industry}</p>
+                    <p><b>CreatedDate</b> : {acc.CreateDate}</p>
+                    <p><b>Type</b> : {acc.Type}</p>
+                    <p><b>Rating</b> : {acc.Rating}</p>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+        </template>
+</lightning-accordion-section>
+
+
+
+
+<lightning-accordion-section name="B" label="contact">
+    <template if:true={contacts}>
+        <!-- accordion component with muliple sectio open -->
+    <lightning-accordion allow-multiple-sections-open>
+        <template for:each={contacts} for:item="con" for:index="indexVarb">
+            <lightning-accordion-section key={con.Id} name={con.Name} label={con.Name}>
+                <p><b>Id</b> : {con.Id}</p>
+                <p><b>Name</b> : {con.Name}</p>
+              
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+    </template>
+</lightning-accordion-section>
+
+
+<lightning-accordion-section name="c" label="opportunities">
+    <template if:true={opportunity}>
+        <!-- accordion component with muliple sectio open -->
+    <lightning-accordion allow-multiple-sections-open>
+        <template for:each={opportunity} for:item="op" for:index="indexVarc">
+            <lightning-accordion-section key={op.Id} name={op.Name} label={op.Name}>
+                <p><b>Id</b> : {op.Id}</p>
+                <p><b>Name</b> : {op.Name}</p>
+              
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+    </template>
+</lightning-accordion-section>
+
+
+
+
+
+</lightning-accordion>
+</div>
+</lightning-card>
+
+    
+
+</template>
